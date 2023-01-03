@@ -1,0 +1,42 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hehe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body onload="loaded();">
+        <img src="./feuerherz.png"  width="100%">
+        <h6 id="rquote" class="title" onclick="random()">
+        
+        </h6>
+    </body>
+    <style>
+        .title {
+            color: black;
+            text-align: center;
+            font-family: monospace;
+        }
+    </style>
+
+    <script>
+        function loaded() {
+           // alert('Please leave this page');
+           random();
+        }
+
+      function random() {
+        const quotes = [
+            "This page will self distruct in 10 seconds.", 
+            "My raspberry runs as good as it tastes.",
+            "Someone buys a Raspberry... what is this super food?",
+            "I like my delivery guy to be Express."
+        ]
+        var quote = quotes[Math.floor(Math.random()*quotes.length)];
+        document.getElementById("rquote").innerHTML = quote;
+      }
+    </script>
+
+    
+</html>
