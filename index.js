@@ -3,7 +3,7 @@ const app = express()
 const PORT = 7780;
 const path = require('path');
 
-app.use(express.json())
+app.use(express.static("public"))
 
 app.listen(
     PORT,
