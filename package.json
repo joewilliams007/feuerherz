@@ -1,0 +1,19 @@
+{
+  "name": "feuerherz",
+  "version": "1.0.0",
+  "description": "My personal website for fun stuff!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joewilliams007/feuerherz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joewilliams007/feuerherz/issues"
+  },
+  "homepage": "https://github.com/joewilliams007/feuerherz#readme"
+}
