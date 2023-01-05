@@ -7,7 +7,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body onload="loaded();">
-        <img src="./feuerherz.png"  width="100%">
+        <img id="banner" src="./feuerherz.png"  width="100%" onclick="random()">
         <h6 id="rquote" class="title" onclick="random()">
         
         </h6>
@@ -37,8 +37,15 @@
             "Can i have a cup of java?",
             "Feuerherz is infinite."
         ]
+        const banners = [
+            "./feuerherz.png", 
+            "./lines.png",
+            "./name.png"
+        ]
         var quote = quotes[Math.floor(Math.random()*quotes.length)];
+        var banner = banners[Math.floor(Math.random()*banners.length)];
         document.getElementById("rquote").innerHTML = quote;
+        document.getElementById("banner").src = banner;
       }
     </script>
 
