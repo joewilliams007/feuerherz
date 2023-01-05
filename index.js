@@ -13,3 +13,7 @@ app.listen(
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
+
+process.on('uncaughtException', err => {
+    console.error(err && err.stack)
+});
