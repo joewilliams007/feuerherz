@@ -22,14 +22,14 @@ app.get("/getchat", (req, res) => {
     app.use(express.json())
 
     fs.readFile('./chat.json', function (err, data) {
-        var json = JSON.parse(data)
+        var json = JSON.parse(data).reverse()
         var chat;
         json.forEach(element => {
             chat+=element
         });
 
         res.status(200).send({
-            chat: chat.reverse()
+            chat: chat
         })
     })
 })
