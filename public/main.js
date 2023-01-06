@@ -52,6 +52,21 @@ function postChat() {
         console.log(response.success)
         document.getElementById('message').innerHTML = response.success
         alert("message sent!")
+        getChat()
+    })
+    .catch(err => console.log(err))
+}
+
+function getChat() {
+    console.log("getting chat")
+
+    document.getElementById('message').innerHTML = ""
+
+    fetch("/getchat")
+    .then(response => response.json())
+    .then((response) => {
+        console.log(response.success)
+        document.getElementById('chat').innerHTML = response.chat
     })
     .catch(err => console.log(err))
 }

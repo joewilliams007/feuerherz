@@ -6,7 +6,7 @@
     <title>feuerherz</title>
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body onload="loaded();">
+<body onload="loaded(); getChat();">
     
     <img id="banner" src="./feuerherz.png"  width="100%" onclick="random()">
         <p id="rquote" class="title" onclick="random()">
@@ -25,6 +25,10 @@
 
 
     <button onclick="postChat()">submit</button>
+
+    <p class="text" id="chat">
+        loading chat
+    </p>
 
     <img src="cat.gif" alt="cat pixel art" class="center"> 
 

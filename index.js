@@ -18,6 +18,14 @@ app.get("/chat", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/chat.html'));
 })
 
+app.get("/getchat", (req, res) => {
+    app.use(express.json())
+
+    res.status(200).send({
+        chat: "hiii\nhow uu"
+    })
+})
+
 app.get("/sendchat/:username/:message", (req, res) => {
     app.use(express.json())
 
