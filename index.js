@@ -25,11 +25,11 @@ app.get("/getchat", (req, res) => {
         var json = JSON.parse(data).reverse()
         var chat;
         json.forEach(element => {
-            chat+=element
+            chat+=element.replace("undefined","")
         });
 
         res.status(200).send({
-            chat: chat
+            chat: chat.replace("undefined","")
         })
     })
 })
