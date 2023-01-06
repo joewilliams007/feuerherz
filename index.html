@@ -9,7 +9,7 @@
     <body onload="loaded();">
         <img id="banner" src="./feuerherz.png"  width="100%" onclick="random()">
         <p id="rquote" class="title" onclick="random()">
-        
+            
         </p>
         <h4 class="text">
             welcome to my website!
@@ -25,6 +25,19 @@
 
         <p class="text">
             my name is joe aka <b>feuerherz</b>. i am currently a student from germany.
+        </p>
+
+        <h4 class="text">
+            github
+        </h4>
+
+        <div>
+          <img src="https://avatars.githubusercontent.com/u/83557178?v=4"  width="40px" height="40px" style="border-radius: 50%;">
+        </div>
+
+
+        <p class="text" id="github">
+            loading
         </p>
 
         <img src="cat.gif" alt="cat pixel art" class="center"> 
@@ -87,6 +100,10 @@
                 bottom: 0px;
             }
         }
+        .link {
+            text-decoration: underline;
+            color: #000000;
+        }
     </style>
 
     <script>
@@ -115,7 +132,19 @@
         var banner = banners[Math.floor(Math.random()*banners.length)];
         document.getElementById("rquote").innerHTML = quote;
         document.getElementById("banner").src = banner;
+        getData()
       }
+
+
+    function getData() {
+        fetch("https://api.github.com/users/joewilliams007")
+        .then(response => response.json())
+        .then((response) => {
+            console.log(response)
+            document.getElementById("github").innerHTML = "<a href='https://www.github.com/joewilliams007'> <span class='link'>"+response.login+"</span></a><br>followers: "+response.followers+"<br>following: "+response.following;
+        })
+        .catch(err => console.log(err))
+    }
 
     </script>
 
