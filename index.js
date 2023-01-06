@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
+app.get("/chat", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+})
+
 app.get("/chat/:username/:message", (req, res) => {
     app.use(express.json())
 
