@@ -42,10 +42,10 @@ function postChat() {
     const username = document.getElementById('username').value
     const message = document.getElementById('message').value
 
-    if (username.length() < 1) {
+    if (username.length < 1) {
         return alert("enter username")
     }
-    if (message.length() < 1) {
+    if (message.length < 1) {
         return alert("enter message")
     }
 
