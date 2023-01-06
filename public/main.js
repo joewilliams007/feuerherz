@@ -44,11 +44,14 @@ function postChat() {
 
     console.log("sending chat"+username+" "+message)
 
+    document.getElementById('message').innerHTML = ""
+
     fetch("/sendchat/"+username+"/"+message)
     .then(response => response.json())
     .then((response) => {
         console.log(response.success)
-        document.getElementById('message').innerText = response.success
+        document.getElementById('message').innerHTML = response.success
+        alert("message sent!")
     })
     .catch(err => console.log(err))
 }
