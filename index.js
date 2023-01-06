@@ -21,14 +21,6 @@ app.get("/chat", (req, res) => {
 app.get("/getchat", (req, res) => {
     app.use(express.json())
 
-    res.status(200).send({
-        chat: "hiii\nhow uu"
-    })
-})
-
-app.get("/getchat", (req, res) => {
-    app.use(express.json())
-
     fs.readFile('./public/chat.json', function (err, data) {
         var json = JSON.parse(data)
         var chat;
