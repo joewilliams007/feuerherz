@@ -37,12 +37,13 @@ app.get("/getchat", (req, res) => {
 
 app.get("/sendchat/:username/:message", (req, res) => {
     app.use(express.json())
-    
-    fs.readFile('chat.json', function (err, data) {
+
+ 
+    fs.readFileSync('chat.json', function (err, data) {
         var json = JSON.parse(data)
+
         json.push(username+"<br>"+message+"<br>")
-    
-        fs.writeFile("chat.json", JSON.stringify(json))
+        fs.writeFileSync('chat.json', JSON.stringify(json))
     })
 
     res.status(200).send({
