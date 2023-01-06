@@ -38,8 +38,8 @@ app.get("/sendchat/:username/:message", (req, res) => {
     app.use(express.json())
 
     const json = JSON.parse(fs.readFileSync('chat.json'));
-    json.push(req.params.username+"<br>"+req.params.message+"<br>")
-    
+    json.push("<strong>"+req.params.username+"</strong><br>"+req.params.message+"<br>")
+
         fs.writeFileSync('./chat.json', JSON.stringify(json))
  
 
