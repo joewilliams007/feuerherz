@@ -53,9 +53,7 @@ app.get("/sendchat/:username/:message", (req, res) => {
     })
 
     res.status(200).send({
-        success: true,
-        username: username,
-        message: message
+        success: true
     })
 })
 
