@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feuerherz</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body onload="loaded();">
+    
+    <img id="banner" src="./feuerherz.png"  width="100%" onclick="random()">
+        <p id="rquote" class="title" onclick="random()">
+        </p>
+
+    <form>
+        <p class="text">
+            username
+        </p>
+        <input type="text" id="username" name="fname" value="anonym"><br>
+        <p class="text">
+            message
+        </p>
+        <input type="text" id="message" name="lname" value=""><br><br>
+        <span class='link' onclick="postChat">submit</span>
+    </form> 
+
+    <img src="cat.gif" alt="cat pixel art" class="center"> 
+
+    <div class='footer-overlay'>
+        <p class="textW">
+            this is a public chat! you can leave a message here.
+        </p>
+    </div>
+</body>
+
+<script src="main.js"></script>
+</html>
