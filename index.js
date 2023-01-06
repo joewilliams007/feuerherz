@@ -24,7 +24,7 @@ app.get("/getchat", (req, res) => {
     fs.readFile('./chat.json', function (err, data) {
         var json = JSON.parse(data)
         var chat;
-        json.array.forEach(element => {
+        json.forEach(element => {
             chat+=element
         });
 
