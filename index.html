@@ -27,9 +27,11 @@
             my name is joe aka <b>feuerherz</b>. i am currently a student from germany.
         </p>
 
+        <img src="cat.gif" alt="cat pixel art" class="center"> 
+
         <div class='footer-overlay'>
             <p class="textW">
-                thank you for visiting my website! [y][n]
+                thank you for visiting my website! <p class="textW">[y][n]</p>
             </p>
         </div>
     </body>
@@ -50,6 +52,13 @@
             font-family: monospace;
             font-size: x-small;
         }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width:40px;
+            height:40px;
+        }
         .footer-overlay {
             position: fixed;
             bottom: 0px;
@@ -65,12 +74,12 @@
         }
 
         @keyframes overlayMoveUp {
-        from {
-            bottom: -75px;
-        }
-        to {
-            bottom: 0px;
-        }
+            from {
+                bottom: -75px;
+            }
+            to {
+                bottom: 0px;
+            }
         }
     </style>
 
@@ -101,6 +110,7 @@
         document.getElementById("rquote").innerHTML = quote;
         document.getElementById("banner").src = banner;
       }
+
     </script>
 
     
