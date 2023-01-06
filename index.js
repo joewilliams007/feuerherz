@@ -29,7 +29,7 @@ app.get("/getchat", (req, res) => {
         });
 
         res.status(200).send({
-            chat: chat
+            chat: chat.reverse()
         })
     })
 })
