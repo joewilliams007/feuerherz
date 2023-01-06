@@ -47,8 +47,8 @@ function postChat() {
     fetch("/sendchat/"+username+"/"+message)
     .then(response => response.json())
     .then((response) => {
-        console.log(response)
-        document.getElementById('message').innerText = response
+        console.log(response.success)
+        document.getElementById('message').innerText = response.success
     })
     .catch(err => console.log(err))
 }
