@@ -42,7 +42,7 @@ app.get("/sendchat/:username/:message", (req, res) => {
         var json = JSON.parse(data)
         json.push(username+"<br>"+message+"<br>")
     
-        fs.writeFile("'chat.json", JSON.stringify(json))
+        fs.writeFile("chat.json", JSON.stringify(json))
     })
 
     res.status(200).send({
