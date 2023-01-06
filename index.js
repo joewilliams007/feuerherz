@@ -14,6 +14,19 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
+app.get("/chat/:username/:message", (req, res) => {
+    app.use(express.json())
+
+    var username = req.params.username;
+    var message = req.params.message;
+
+    res.status(200).send({
+        success: true,
+        username: username,
+        message: message
+    })
+})
+
 process.on('uncaughtException', err => {
     console.error(err && err.stack)
 });
