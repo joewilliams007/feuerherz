@@ -42,10 +42,13 @@ function postChat() {
     const username = document.getElementById('username').value
     const message = document.getElementById('message').value
 
+    console.log("sending chat"+username+" "+message)
+
     fetch("/sendchat/"+username+"/"+message)
     .then(response => response.json())
     .then((response) => {
         console.log(response)
+        document.getElementById('message').innerText = response
     })
     .catch(err => console.log(err))
 }
