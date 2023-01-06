@@ -8,15 +8,67 @@
     </head>
     <body onload="loaded();">
         <img id="banner" src="./feuerherz.png"  width="100%" onclick="random()">
-        <h6 id="rquote" class="title" onclick="random()">
+        <p id="rquote" class="title" onclick="random()">
         
-        </h6>
+        </p>
+        <h4 class="text">
+            welcome to my website!
+        </h4>
+
+        <p class="text">
+            this website is still in the making but i will post here about my projects and interests.
+        </p>
+
+        <h4 class="text">
+            about me
+        </h4>
+
+        <p class="text">
+            my name is joe aka <b>feuerherz</b>. i am currently a student from germany.
+        </p>
+
+        <div class='footer-overlay'>
+            <p class="textW">
+                thank you for visiting my website! [y][n]
+            </p>
+        </div>
     </body>
     <style>
         .title {
             color: black;
             text-align: center;
             font-family: monospace;
+            font-style: italic;
+        }
+        .text {
+            color: black;
+            font-family: monospace;
+        }
+        .textW {
+            color: rgb(255, 255, 255);
+            font-family: monospace;
+        }
+        .footer-overlay {
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 1);
+            height: 30px;
+            animation: overlayMoveUp .5s ease-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes overlayMoveUp {
+        from {
+            bottom: -75px;
+        }
+        to {
+            bottom: 0px;
+        }
         }
     </style>
 
