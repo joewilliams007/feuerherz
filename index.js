@@ -2,6 +2,7 @@ const express = require('express');
 const app = express()
 const PORT = 7780;
 const path = require('path');
+var fs = require('fs')
 
 app.use(express.static(path.join(__dirname,"public")));
 
@@ -21,16 +22,28 @@ app.get("/chat", (req, res) => {
 app.get("/getchat", (req, res) => {
     app.use(express.json())
 
-    res.status(200).send({
-        chat: "hiii\nhow uu"
+    fs.readFile('chat.json', function (err, data) {
+        var json = JSON.parse(data)
+        var chat;
+        json.array.forEach(element => {
+            chat+=element
+        });
+
+        res.status(200).send({
+            chat: chat
+        })
     })
 })
 
 app.get("/sendchat/:username/:message", (req, res) => {
     app.use(express.json())
-
-    var username = req.params.username;
-    var message = req.params.message;
+    
+    fs.readFile('chat.json', function (err, data) {
+        var json = JSON.parse(data)
+        json.push(username+"<br>"+message+"<br>")
+    
+        fs.writeFile("'chat.json", JSON.stringify(json))
+    })
 
     res.status(200).send({
         success: true,
