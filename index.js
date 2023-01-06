@@ -21,7 +21,7 @@ app.get("/chat", (req, res) => {
 app.get("/getchat", (req, res) => {
     app.use(express.json())
 
-    fs.readFile('./public/chat.json', function (err, data) {
+    fs.readFile('./chat.json', function (err, data) {
         var json = JSON.parse(data)
         var chat;
         json.array.forEach(element => {
@@ -37,11 +37,11 @@ app.get("/getchat", (req, res) => {
 app.get("/sendchat/:username/:message", (req, res) => {
     app.use(express.json())
 
-    fs.readFileSync('./public/chat.json', function (err, data) {
+    fs.readFileSync('./chat.json', function (err, data) {
         var json = JSON.parse(data)
 
         json.push(req.params.username+"<br>"+req.params.message+"<br>")
-        fs.writeFileSync('./public/chat.json', JSON.stringify(json))
+        fs.writeFileSync('./chat.json', JSON.stringify(json))
     })
 
     res.status(200).send({
