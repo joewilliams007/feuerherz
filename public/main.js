@@ -64,6 +64,15 @@ function postChat() {
     .catch(err => console.log(err))
 }
 
+
+function autoLoadChat() {
+    // Will execute myCallback every 0.5 seconds 
+    window.setInterval(myCallback, 1000);
+
+    function myCallback() {
+        getChat();
+    }
+}
 function getChat() {
     console.log("getting chat")
 
