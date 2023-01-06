@@ -41,4 +41,11 @@ function getData() {
 function postChat() {
     const username = document.getElementById('username').value
     const message = document.getElementById('message').value
+
+    fetch("/sendchat/"+username+"/"+message)
+    .then(response => response.json())
+    .then((response) => {
+        console.log(response)
+    })
+    .catch(err => console.log(err))
 }

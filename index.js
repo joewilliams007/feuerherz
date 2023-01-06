@@ -18,7 +18,7 @@ app.get("/chat", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/chat.html'));
 })
 
-app.get("/chat/:username/:message", (req, res) => {
+app.get("/sendchat/:username/:message", (req, res) => {
     app.use(express.json())
 
     var username = req.params.username;
