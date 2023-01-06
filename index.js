@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/chat", (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'));
+    res.sendFile(path.join(__dirname, '/public/chat.html'));
 })
 
 app.get("/chat/:username/:message", (req, res) => {
