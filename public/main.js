@@ -56,9 +56,9 @@ function getChess() {
  .then((response) => {
      console.log(response)
      document.getElementById("chess").innerHTML = "<a href='https://www.chess.com/member/Feuerherz0'> <span class='link'>Feuerherz0"
-     +"</span></a><br>rapid: "+response.chess_rapid.last
-     +"<br>daily: "+response.chess_daily.last
-     +"<br>bullet: "+response.chess_bullet.last
+     +"</span></a><br>rapid: "+response.chess_rapid.last.rating
+     +"<br>daily: "+response.chess_daily.last.rating
+     +"<br>bullet: "+response.chess_bullet.last.rating
  })
  .catch(err => console.log(err))
 }
