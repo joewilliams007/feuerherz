@@ -114,9 +114,9 @@ function getChat() {
     .then((response) => {
         console.log(response.success)
 
-        if (oldChat != response.chat) {
+        if (oldchat != response.chat) {
             document.getElementById('chat').innerHTML = response.chat
-            oldChat = response.chat
+            oldchat = response.chat
         }
 
     })
