@@ -38,11 +38,9 @@ app.get("/getchat", (req, res) => {
 })
 
 app.post("/sendchat", jsonParser, (req, res) => {
-   // username = req.body.username
-   // message = req.body.message
+    username = req.body.username
+    message = req.body.message
 
-    console.log(req)
-    console.log(req.body)
     var d = new Date();
     var n = d.toLocaleTimeString();
 
