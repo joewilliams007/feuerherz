@@ -76,17 +76,17 @@ function postChat() {
 
     console.log("sending chat"+username+" "+message)
 
-    document.getElementById('message').innerHTML = ""
+    document.getElementById('message').innerHTML.value = ""
 
-    fetch("/sendchat/"+username+"/"+message)
-    .then(response => response.json())
-    .then((response) => {
-        console.log(response.success)
-        document.getElementById('message').innerHTML = response.success
-        alert("message sent!")
-        getChat()
-    })
-    .catch(err => console.log(err))
+    fetch('sendchat', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "username": username, "message": message })
+    }).catch(err => console.log(err))
+    
 }
 
 

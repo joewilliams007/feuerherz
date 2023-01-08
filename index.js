@@ -34,8 +34,9 @@ app.get("/getchat", (req, res) => {
     })
 })
 
-app.get("/sendchat/:username/:message", (req, res) => {
-    app.use(express.json())
+app.post("/sendchat", (req, res) => {
+    username = req.body.username
+    message = req.body.message
 
     var d = new Date();
     var n = d.toLocaleTimeString();
