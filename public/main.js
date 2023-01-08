@@ -107,18 +107,13 @@ function getChat() {
 
     document.getElementById('message').innerHTML = ""
 
-    var oldchat;
 
     fetch("/getchat")
     .then(response => response.json())
     .then((response) => {
         console.log(response.success)
 
-        if (oldchat != response.chat) {
-            document.getElementById('chat').innerHTML = response.chat
-            oldchat = response.chat
-        }
-
+        document.getElementById('chat').innerHTML = response.chat
     })
     .catch(err => console.log(err))
 }
