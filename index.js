@@ -38,6 +38,8 @@ app.post("/sendchat", (req, res) => {
     username = req.body.username
     message = req.body.message
 
+    console.log(req)
+    console.log(req.body)
     var d = new Date();
     var n = d.toLocaleTimeString();
 
