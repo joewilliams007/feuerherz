@@ -66,6 +66,7 @@ function getChess() {
 function postChat() {
     const username = document.getElementById('username').value
     const message = document.getElementById('message').value
+    const media = document.getElementById('media').value
 
     if (username.length < 1) {
         return alert("enter username")
@@ -77,6 +78,7 @@ function postChat() {
     console.log("sending chat"+username+" "+message)
 
     document.getElementById('message').value = ""
+    document.getElementById('media').value = ""
 
     fetch('sendchat', {
         method: 'POST',
@@ -84,7 +86,7 @@ function postChat() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ "username": username, "message": message })
+        body: JSON.stringify({ "username": username, "message": message, "media": media })
     }).catch(err => console.log(err))
     
 }
