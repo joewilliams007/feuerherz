@@ -32,6 +32,11 @@ body {
     width:25px;
     height:25px;
 }
+.width100 {
+    max-width: 200px;
+    height: 100px;
+    width: auto;
+  }
 .footer-overlay {
     position: fixed;
     bottom: 0px;

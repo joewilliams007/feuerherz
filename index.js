@@ -50,7 +50,7 @@ app.post("/sendchat", jsonParser, (req, res) => {
     if (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png") || media.includes(".gif")) {
 
         json.push("<strong>"+username+"</strong> "+n+
-        ":<br><img src="+media+"width='200px' height='100px' style='margin-top: 10px; 'margin-bottom: 10px; -o-object-fit: contain; ><br>"
+        ":<br><img src="+media+" class='width100'><br>"
         +message+"<br><br>")
         fs.writeFileSync('./chat.json', JSON.stringify(json))
 
