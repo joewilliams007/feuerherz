@@ -5,6 +5,9 @@ const path = require('path');
     var fs = require('fs')
 app.use(express.static(path.join(__dirname,"public")));
 
+var bodyParser = require('body-parser')
+var jsonParser = bodyParser.json()
+
 app.listen(
     PORT,
     () => console.log("Its alive on http://localhost:" + PORT + "")
@@ -34,7 +37,7 @@ app.get("/getchat", (req, res) => {
     })
 })
 
-app.post("/sendchat", (req, res) => {
+app.post("/sendchat", jsonParser, (req, res) => {
    // username = req.body.username
    // message = req.body.message
 
