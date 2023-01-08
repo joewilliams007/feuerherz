@@ -21,6 +21,10 @@ app.get("/chat", (req, res) => {
     res.sendFile(path.join(__dirname, '/public/chat.html'));
 })
 
+app.get("/friends", (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/friends.html'));
+})
+
 app.get("/getchat", (req, res) => {
     app.use(express.json())
 
