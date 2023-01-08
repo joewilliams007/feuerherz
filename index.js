@@ -45,7 +45,7 @@ app.post("/sendchat", jsonParser, (req, res) => {
     var n = d.toLocaleTimeString();
 
     const json = JSON.parse(fs.readFileSync('chat.json'));
-    json.push("<strong>"+req.params.username+"</strong> "+n+":<br>"+req.params.message+"<br><br>")
+    json.push("<strong>"+username+"</strong> "+n+":<br>"+message+"<br><br>")
 
         fs.writeFileSync('./chat.json', JSON.stringify(json))
  
