@@ -76,7 +76,7 @@ function postChat() {
 
     console.log("sending chat"+username+" "+message)
 
-    document.getElementById('message').innerHTML.value = ""
+    document.getElementById('message').value = ""
 
     fetch('sendchat', {
         method: 'POST',
