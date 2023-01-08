@@ -40,14 +40,28 @@ app.get("/getchat", (req, res) => {
 app.post("/sendchat", jsonParser, (req, res) => {
     username = req.body.username
     message = req.body.message
+    media = req.body.media
 
     var d = new Date();
     var n = d.toLocaleTimeString();
 
-    const json = JSON.parse(fs.readFileSync('chat.json'));
-    json.push("<strong>"+username+"</strong> "+n+":<br>"+message+"<br><br>")
-
+    const json = JSON.parse(fs.readFileSync('chat.json'))
+    
+    if (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png") || media.includes(".gif")) {
+        
+        json.push("<strong>"+username+"</strong> "+n+
+        ":<br><img src="+media+" width='200px' height='100px' style='margin-top: 10px; 'margin-bottom: 10px;>"
+        +message+"<br><br>")
         fs.writeFileSync('./chat.json', JSON.stringify(json))
+
+
+    } else {
+        
+        json.push("<strong>"+username+"</strong> "+n+":<br>"+message+"<br><br>")
+        fs.writeFileSync('./chat.json', JSON.stringify(json))
+
+    }
+
  
 
     res.status(200).send({
