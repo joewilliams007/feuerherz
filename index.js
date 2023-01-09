@@ -51,7 +51,7 @@ app.post("/sendchat", jsonParser, (req, res) => {
 
     const json = JSON.parse(fs.readFileSync('chat.json'))
     
-    if (media.includes("http") {
+    if (media.includes("http")) {
         if (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png") || media.includes(".gif")) {
 
         json.push("<strong>"+username+"</strong> "+n+
