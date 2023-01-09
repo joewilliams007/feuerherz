@@ -7,6 +7,9 @@ app.use(express.static(path.join(__dirname,"public")));
 
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
+var cors = require('cors')
+
+app.use(cors()) // Use this after the variable declaration
 
 app.listen(
     PORT,
