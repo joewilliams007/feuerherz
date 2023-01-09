@@ -61,8 +61,8 @@ function getDev() {
     jQuery.ajax({
         url: "https://devrant.com/users/joewilliams007",
         success: function(result) {
-            var html = jQuery('<div>').html(result); // Instead of div tag you can use specific id with div
-    
+            var htmlA = jQuery('<div>').html(result); // Instead of div tag you can use specific id with div
+            alert(htmlA)
         },
     });
 }
@@ -130,19 +130,19 @@ function setCookie(cname,cvalue,exdays) {
   }
   
 function getCookie(cname) {
-let name = cname + "=";
-let decodedCookie = decodeURIComponent(document.cookie);
-let ca = decodedCookie.split(';');
-for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-    c = c.substring(1);
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
     }
-    if (c.indexOf(name) == 0) {
-    return c.substring(name.length, c.length);
-    }
-}
-return "";
+    return "";
 }
 
 function checkCookie() {
