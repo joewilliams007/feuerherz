@@ -58,12 +58,8 @@ function getChess() {
 }
 
 function getDev() {
-    jQuery.ajax({
-        url: "https://devrant.com/users/joewilliams007",
-        success: function(result) {
-            var htmlA = jQuery('<div>').html(result); // Instead of div tag you can use specific id with div
-            alert(htmlA)
-        },
+    $.getJSON("https://devrant.com/users/joewilliams007",function(data){
+        alert(data.query.results);
     });
 }
 

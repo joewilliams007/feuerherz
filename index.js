@@ -7,13 +7,6 @@ app.use(express.static(path.join(__dirname,"public")));
 
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
-var cors = require('cors')
-const corsOptions ={
-    origin:'http://localhost:7780', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
 
 app.listen(
     PORT,
@@ -21,12 +14,6 @@ app.listen(
 )
 
 app.get("/", (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*")
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Max-Age", "1800");
-    res.setHeader("Access-Control-Allow-Headers", "content-type");
-    res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
-
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
@@ -79,6 +66,7 @@ app.post("/sendchat", jsonParser, (req, res) => {
         json.push("<strong>"+username+"</strong> "+n+":<br>"+message+"<br><br>")
         fs.writeFileSync('./chat.json', JSON.stringify(json))
     }
+
 
     res.status(200).send({
         success: true
