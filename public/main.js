@@ -63,7 +63,7 @@ function getDev() {
     .then((response) => {
         console.log(response)
         document.getElementById("devRant").innerHTML = "<a href='https://devrant.com/users/joewilliams007'> <span class='link'>"+response.profile.username
-        +"</span></a><br>++: "+response.profile.score
+        +"</span></a><br>score: +"+response.profile.score
     })
     .catch(err => console.log(err))
 }
