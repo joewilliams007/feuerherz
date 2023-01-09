@@ -31,23 +31,17 @@ function random() {
 function getData() {
     getGithub()
     getChess()
- fetch("https://api.github.com/users/joewilliams007")
- .then(response => response.json())
- .then((response) => {
-     console.log(response)
-     document.getElementById("github").innerHTML = "<a href='https://www.github.com/joewilliams007'> <span class='link'>"+response.login+"</span></a><br>followers: "+response.followers+"<br>following: "+response.following+"<br>repositories: "+response.public_repos;
- })
- .catch(err => console.log(err))
+    getDev()
 }
 
 function getGithub() {
- fetch("https://api.github.com/users/joewilliams007")
- .then(response => response.json())
- .then((response) => {
-     console.log(response)
-     document.getElementById("github").innerHTML = "<a href='https://www.github.com/joewilliams007'> <span class='link'>"+response.login+"</span></a><br>followers: "+response.followers+"<br>following: "+response.following+"<br>repositories: "+response.public_repos;
- })
- .catch(err => console.log(err))
+    fetch("https://api.github.com/users/joewilliams007")
+    .then(response => response.json())
+    .then((response) => {
+        console.log(response)
+        document.getElementById("github").innerHTML = "<a href='https://www.github.com/joewilliams007'> <span class='link'>"+response.login+"</span></a><br>followers: "+response.followers+"<br>following: "+response.following+"<br>repositories: "+response.public_repos;
+    })
+    .catch(err => console.log(err))
 }
 
 function getChess() {
@@ -61,6 +55,16 @@ function getChess() {
      +"<br>bullet: "+response.chess_bullet.last.rating
  })
  .catch(err => console.log(err))
+}
+
+function getDev() {
+    jQuery.ajax({
+        url: "https://devrant.com/users/joewilliams007",
+        success: function(result) {
+            var html = jQuery('<div>').html(result); // Instead of div tag you can use specific id with div
+    
+        },
+    });
 }
 
 function postChat() {
@@ -142,10 +146,11 @@ return "";
 }
 
 function checkCookie() {
-let user = getCookie("username");
-if (user != "") {
-    document.getElementById('username').value = user
-} else {
+    let user = getCookie("username");
+    if (user != "") {
+        document.getElementById('username').value = user
+    } else {
 
+    }
 }
-}
+
