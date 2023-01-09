@@ -58,9 +58,14 @@ function getChess() {
 }
 
 function getDev() {
-    $.getJSON("https://devrant.com/users/joewilliams007",function(data){
-        alert(data.query.results);
-    });
+    fetch("https://devrant.com/api/users/5344593?app=3")
+    .then(response => response.json())
+    .then((response) => {
+        console.log(response)
+        document.getElementById("devRant").innerHTML = "<a href='https://devrant.com/users/joewilliams007'> <span class='link'>"+response.profile.username
+        +"</span></a><br>++: "+response.profile.score
+    })
+    .catch(err => console.log(err))
 }
 
 function postChat() {
