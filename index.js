@@ -51,13 +51,19 @@ app.post("/sendchat", jsonParser, (req, res) => {
 
     const json = JSON.parse(fs.readFileSync('chat.json'))
     
-    if (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png") || media.includes(".gif")) {
+    if (media.includes("http") {
+        if (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png") || media.includes(".gif")) {
 
         json.push("<strong>"+username+"</strong> "+n+
         ":<br><img src="+media+' style="max-width: 200px; max-height: 100px;"><br>'
         +message+"<br><br>")
         fs.writeFileSync('./chat.json', JSON.stringify(json))
+       } else {
+        
+        json.push("<strong>"+username+"</strong> "+n+":<br>"+message+"<br><br>")
+        fs.writeFileSync('./chat.json', JSON.stringify(json))
 
+       }
 
     } else {
         
